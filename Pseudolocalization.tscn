@@ -1,0 +1,209 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://icon.png" type="Texture2D" id=1]
+[ext_resource path="res://Pseudolocalization.gd" type="Script" id=2]
+
+[node name="Pseudolocalization" type="Node2D"]
+script = ExtResource( 2 )
+
+[node name="Title" type="Label" parent="."]
+offset_top = 27.0
+offset_right = 1024.0
+offset_bottom = 74.0
+custom_font_sizes/font_size = 30
+text = "Pseudolocalization Demo"
+align = 1
+valign = 1
+structured_text_bidi_override_options = [  ]
+script = null
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="icon" type="Sprite2D" parent="Title"]
+position = Vector2( 67.1489, 33.8245 )
+scale = Vector2( 1.26563, 1.26563 )
+skew = 4.37114e-08
+texture = ExtResource( 1 )
+script = null
+
+[node name="A2Z" type="Label" parent="."]
+offset_left = 1.0
+offset_top = 460.918
+offset_right = 1023.0
+offset_bottom = 544.918
+custom_font_sizes/font_size = 34
+custom_colors/font_color = Color( 0.164706, 0.85098, 1, 1 )
+text = "ABCDEFGHIJKLMNOPQRSTUVWXYZ
+abcdefghijklmnopqrstuvwxyz"
+align = 1
+valign = 1
+structured_text_bidi_override_options = [  ]
+script = null
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Pseudolocalization_options" type="Node2D" parent="."]
+position = Vector2( 26.1626, 22.5949 )
+script = null
+
+[node name="toggle" type="CheckButton" parent="Pseudolocalization_options"]
+offset_left = -1.0
+offset_top = 128.0
+offset_right = 307.0
+offset_bottom = 168.0
+text = "Toggle Pseudolocalization"
+script = null
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="accents" type="CheckButton" parent="Pseudolocalization_options"]
+offset_left = -1.0
+offset_top = 163.0
+offset_right = 307.0
+offset_bottom = 203.0
+text = "Toggle accents"
+script = null
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="fakebidi" type="CheckButton" parent="Pseudolocalization_options"]
+offset_left = -1.0
+offset_top = 200.0
+offset_right = 306.0
+offset_bottom = 240.0
+rect_pivot_offset = Vector2( -370, -80 )
+text = "Toggle Fake Bidi"
+script = null
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="prefix" type="Node2D" parent="Pseudolocalization_options"]
+skew = 4.37114e-08
+script = null
+
+[node name="TextEdit" type="TextEdit" parent="Pseudolocalization_options/prefix"]
+offset_left = 5.0
+offset_top = 274.0
+offset_right = 294.0
+offset_bottom = 305.0
+structured_text_bidi_override_options = [  ]
+script = null
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="Pseudolocalization_options/prefix"]
+offset_left = 6.0
+offset_top = 245.0
+offset_right = 297.0
+offset_bottom = 271.0
+text = "Pseudolocalization Prefix :"
+structured_text_bidi_override_options = [  ]
+script = null
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="suffix" type="Node2D" parent="Pseudolocalization_options"]
+position = Vector2( 1, 65 )
+skew = 4.37114e-08
+script = null
+
+[node name="TextEdit" type="TextEdit" parent="Pseudolocalization_options/suffix"]
+offset_left = 5.0
+offset_top = 274.0
+offset_right = 294.0
+offset_bottom = 305.0
+structured_text_bidi_override_options = [  ]
+script = null
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="Pseudolocalization_options/suffix"]
+offset_left = 6.0
+offset_top = 245.0
+offset_right = 297.0
+offset_bottom = 271.0
+text = "Pseudolocalization Suffix :"
+structured_text_bidi_override_options = [  ]
+script = null
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Pseudolocalizer" type="Node2D" parent="."]
+position = Vector2( -13.0813, -10.7029 )
+script = null
+
+[node name="Key" type="TextEdit" parent="Pseudolocalizer"]
+offset_left = 737.378
+offset_top = 187.919
+offset_right = 1007.38
+offset_bottom = 252.919
+structured_text_bidi_override_options = [  ]
+script = null
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Result" type="TextEdit" parent="Pseudolocalizer"]
+offset_left = 737.378
+offset_top = 344.027
+offset_right = 1007.38
+offset_bottom = 409.027
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_colors/font_readonly_color = Color( 1, 1, 1, 1 )
+readonly = true
+structured_text_bidi_override_options = [  ]
+script = null
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="Pseudolocalizer"]
+offset_left = 736.0
+offset_top = 153.0
+offset_right = 1006.0
+offset_bottom = 176.0
+text = "Pseudolocalization key :"
+structured_text_bidi_override_options = [  ]
+script = null
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label2" type="Label" parent="Pseudolocalizer"]
+offset_left = 739.568
+offset_top = 307.597
+offset_right = 1009.57
+offset_bottom = 333.597
+text = "Pseudolocalization result :"
+structured_text_bidi_override_options = [  ]
+script = null
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Pseudolocalize" type="Button" parent="Pseudolocalizer"]
+offset_left = 797.46
+offset_top = 265.54
+offset_right = 957.46
+offset_bottom = 294.54
+text = "Pseudolocalize"
+script = null
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[connection signal="toggled" from="Pseudolocalization_options/toggle" to="." method="_on_toggle_toggled"]
+[connection signal="toggled" from="Pseudolocalization_options/accents" to="." method="_on_accents_toggled"]
+[connection signal="toggled" from="Pseudolocalization_options/fakebidi" to="." method="_on_fakebidi_toggled"]
+[connection signal="text_changed" from="Pseudolocalization_options/prefix/TextEdit" to="." method="_on_prefix_changed"]
+[connection signal="text_changed" from="Pseudolocalization_options/suffix/TextEdit" to="." method="_on_suffix_changed"]
+[connection signal="pressed" from="Pseudolocalizer/Pseudolocalize" to="." method="_on_Pseudolocalize_pressed"]
