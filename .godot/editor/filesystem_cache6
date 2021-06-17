@@ -1,6 +1,6 @@
 3844edc3d1660e6e25a999aafc25a878
-::res://::1623851473
-default_env.tres::Environment::1623840122::0::1::::<><>::
+::res://::1623920547
+default_env.tres::Environment::1623851657::0::1::::<><>::
 icon.png::StreamTexture2D::1623835451::1623835476::1::::<><>::
 Pseudolocalization.gd::GDScript::1623838606::0::1::::<>Node2D<>::
-Pseudolocalization.tscn::PackedScene::1623840122::0::1::::<><>::res://icon.png<>res://Pseudolocalization.gd
+Pseudolocalization.tscn::PackedScene::1623851657::0::1::::<><>::res://icon.png<>res://Pseudolocalization.gd

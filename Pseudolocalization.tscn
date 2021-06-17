@@ -49,10 +49,9 @@ position = Vector2( 26.1626, 22.5949 )
 script = null
 
 [node name="toggle" type="CheckButton" parent="Pseudolocalization_options"]
-offset_left = -1.0
-offset_top = 128.0
-offset_right = 307.0
-offset_bottom = 168.0
+offset_top = 125.0
+offset_right = 400.0
+offset_bottom = 165.0
 text = "Toggle Pseudolocalization"
 script = null
 __meta__ = {
@@ -60,10 +59,9 @@ __meta__ = {
 }
 
 [node name="accents" type="CheckButton" parent="Pseudolocalization_options"]
-offset_left = -1.0
-offset_top = 163.0
-offset_right = 307.0
-offset_bottom = 203.0
+offset_top = 160.0
+offset_right = 400.0
+offset_bottom = 200.0
 text = "Toggle accents"
 script = null
 __meta__ = {
@@ -71,10 +69,9 @@ __meta__ = {
 }
 
 [node name="fakebidi" type="CheckButton" parent="Pseudolocalization_options"]
-offset_left = -1.0
-offset_top = 200.0
-offset_right = 306.0
-offset_bottom = 240.0
+offset_top = 195.0
+offset_right = 400.0
+offset_bottom = 235.0
 rect_pivot_offset = Vector2( -370, -80 )
 text = "Toggle Fake Bidi"
 script = null
@@ -88,9 +85,9 @@ script = null
 
 [node name="TextEdit" type="TextEdit" parent="Pseudolocalization_options/prefix"]
 offset_left = 5.0
-offset_top = 274.0
-offset_right = 294.0
-offset_bottom = 305.0
+offset_top = 260.0
+offset_right = 385.0
+offset_bottom = 290.0
 structured_text_bidi_override_options = [  ]
 script = null
 __meta__ = {
@@ -99,9 +96,9 @@ __meta__ = {
 
 [node name="Label" type="Label" parent="Pseudolocalization_options/prefix"]
 offset_left = 6.0
-offset_top = 245.0
+offset_top = 230.0
 offset_right = 297.0
-offset_bottom = 271.0
+offset_bottom = 256.0
 text = "Pseudolocalization Prefix :"
 structured_text_bidi_override_options = [  ]
 script = null
@@ -115,10 +112,10 @@ skew = 4.37114e-08
 script = null
 
 [node name="TextEdit" type="TextEdit" parent="Pseudolocalization_options/suffix"]
-offset_left = 5.0
-offset_top = 274.0
-offset_right = 294.0
-offset_bottom = 305.0
+offset_left = 3.811
+offset_top = 260.0
+offset_right = 383.811
+offset_bottom = 290.0
 structured_text_bidi_override_options = [  ]
 script = null
 __meta__ = {
@@ -127,9 +124,9 @@ __meta__ = {
 
 [node name="Label" type="Label" parent="Pseudolocalization_options/suffix"]
 offset_left = 6.0
-offset_top = 245.0
+offset_top = 230.0
 offset_right = 297.0
-offset_bottom = 271.0
+offset_bottom = 256.0
 text = "Pseudolocalization Suffix :"
 structured_text_bidi_override_options = [  ]
 script = null
@@ -146,6 +143,8 @@ offset_left = 737.378
 offset_top = 187.919
 offset_right = 1007.38
 offset_bottom = 252.919
+text = "The quick brown fox jumped over the lazy dog."
+wrap_enabled = true
 structured_text_bidi_override_options = [  ]
 script = null
 __meta__ = {
@@ -153,13 +152,14 @@ __meta__ = {
 }
 
 [node name="Result" type="TextEdit" parent="Pseudolocalizer"]
-offset_left = 737.378
+offset_left = 739.756
 offset_top = 344.027
-offset_right = 1007.38
+offset_right = 1009.76
 offset_bottom = 409.027
 custom_colors/font_color = Color( 1, 1, 1, 1 )
 custom_colors/font_readonly_color = Color( 1, 1, 1, 1 )
 readonly = true
+wrap_enabled = true
 structured_text_bidi_override_options = [  ]
 script = null
 __meta__ = {
