@@ -44,61 +44,93 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Pseudolocalization_options" type="Node2D" parent="."]
-position = Vector2( 26.1626, 22.5949 )
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+offset_left = 13.0
+offset_top = 102.0
+offset_right = 1025.0
+offset_bottom = 452.0
+custom_constants/separation = 40
+script = null
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Pseudolocalization_options" type="VBoxContainer" parent="HBoxContainer"]
+offset_right = 466.0
+offset_bottom = 350.0
+layout_direction = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
 script = null
 
-[node name="toggle" type="CheckButton" parent="Pseudolocalization_options"]
-offset_top = 125.0
-offset_right = 400.0
-offset_bottom = 165.0
+[node name="toggle" type="CheckButton" parent="HBoxContainer/Pseudolocalization_options"]
+offset_right = 466.0
+offset_bottom = 40.0
+size_flags_horizontal = 3
 text = "Toggle Pseudolocalization"
 script = null
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="accents" type="CheckButton" parent="Pseudolocalization_options"]
-offset_top = 160.0
-offset_right = 400.0
-offset_bottom = 200.0
+[node name="accents" type="CheckButton" parent="HBoxContainer/Pseudolocalization_options"]
+offset_top = 44.0
+offset_right = 466.0
+offset_bottom = 84.0
+size_flags_horizontal = 3
 text = "Toggle accents"
 script = null
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="fakebidi" type="CheckButton" parent="Pseudolocalization_options"]
-offset_top = 195.0
-offset_right = 400.0
-offset_bottom = 235.0
+[node name="doublevowels" type="CheckButton" parent="HBoxContainer/Pseudolocalization_options"]
+offset_top = 88.0
+offset_right = 466.0
+offset_bottom = 128.0
+size_flags_horizontal = 3
+text = "Toggle Double Vowels"
+script = null
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="fakebidi" type="CheckButton" parent="HBoxContainer/Pseudolocalization_options"]
+offset_top = 132.0
+offset_right = 466.0
+offset_bottom = 172.0
 rect_pivot_offset = Vector2( -370, -80 )
+size_flags_horizontal = 3
 text = "Toggle Fake Bidi"
 script = null
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="prefix" type="Node2D" parent="Pseudolocalization_options"]
-skew = 4.37114e-08
+[node name="prefix" type="Control" parent="HBoxContainer/Pseudolocalization_options"]
+offset_top = 176.0
+offset_right = 466.0
+offset_bottom = 176.0
+size_flags_horizontal = 3
 script = null
 
-[node name="TextEdit" type="TextEdit" parent="Pseudolocalization_options/prefix"]
+[node name="TextEdit" type="TextEdit" parent="HBoxContainer/Pseudolocalization_options/prefix"]
 offset_left = 5.0
-offset_top = 260.0
+offset_top = 32.8613
 offset_right = 385.0
-offset_bottom = 290.0
+offset_bottom = 62.8613
+size_flags_horizontal = 3
 structured_text_bidi_override_options = [  ]
 script = null
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Label" type="Label" parent="Pseudolocalization_options/prefix"]
+[node name="Label" type="Label" parent="HBoxContainer/Pseudolocalization_options/prefix"]
 offset_left = 6.0
-offset_top = 230.0
+offset_top = 2.86133
 offset_right = 297.0
-offset_bottom = 256.0
+offset_bottom = 28.8613
 text = "Pseudolocalization Prefix :"
 structured_text_bidi_override_options = [  ]
 script = null
@@ -106,27 +138,30 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="suffix" type="Node2D" parent="Pseudolocalization_options"]
-position = Vector2( 1, 65 )
-skew = 4.37114e-08
+[node name="suffix" type="Control" parent="HBoxContainer/Pseudolocalization_options"]
+offset_top = 180.0
+offset_right = 466.0
+offset_bottom = 180.0
+size_flags_horizontal = 3
 script = null
 
-[node name="TextEdit" type="TextEdit" parent="Pseudolocalization_options/suffix"]
+[node name="TextEdit" type="TextEdit" parent="HBoxContainer/Pseudolocalization_options/suffix"]
 offset_left = 3.811
-offset_top = 260.0
+offset_top = 106.592
 offset_right = 383.811
-offset_bottom = 290.0
+offset_bottom = 136.592
+size_flags_horizontal = 3
 structured_text_bidi_override_options = [  ]
 script = null
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Label" type="Label" parent="Pseudolocalization_options/suffix"]
+[node name="Label" type="Label" parent="HBoxContainer/Pseudolocalization_options/suffix"]
 offset_left = 6.0
-offset_top = 230.0
+offset_top = 76.5923
 offset_right = 297.0
-offset_bottom = 256.0
+offset_bottom = 102.592
 text = "Pseudolocalization Suffix :"
 structured_text_bidi_override_options = [  ]
 script = null
@@ -134,15 +169,35 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Pseudolocalizer" type="Node2D" parent="."]
-position = Vector2( -13.0813, -10.7029 )
+[node name="Pseudolocalizer" type="VBoxContainer" parent="HBoxContainer"]
+offset_left = 506.0
+offset_right = 972.0
+offset_bottom = 350.0
+grow_horizontal = 0
+size_flags_horizontal = 3
 script = null
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
-[node name="Key" type="TextEdit" parent="Pseudolocalizer"]
-offset_left = 737.378
-offset_top = 187.919
-offset_right = 1007.38
-offset_bottom = 252.919
+[node name="Label" type="Label" parent="HBoxContainer/Pseudolocalizer"]
+offset_right = 466.0
+offset_bottom = 26.0
+size_flags_horizontal = 3
+size_flags_vertical = 5
+text = "Pseudolocalization key :"
+structured_text_bidi_override_options = [  ]
+script = null
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Key" type="TextEdit" parent="HBoxContainer/Pseudolocalizer"]
+offset_top = 30.0
+offset_right = 466.0
+offset_bottom = 147.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
 text = "The quick brown fox jumped over the lazy dog."
 wrap_enabled = true
 structured_text_bidi_override_options = [  ]
@@ -151,11 +206,49 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Result" type="TextEdit" parent="Pseudolocalizer"]
-offset_left = 739.756
-offset_top = 344.027
-offset_right = 1009.76
-offset_bottom = 409.027
+[node name="margin" type="MarginContainer" parent="HBoxContainer/Pseudolocalizer"]
+offset_top = 151.0
+offset_bottom = 156.0
+size_flags_horizontal = 0
+size_flags_vertical = 0
+custom_constants/margin_top = 5
+script = null
+
+[node name="Pseudolocalize" type="Button" parent="HBoxContainer/Pseudolocalizer"]
+offset_top = 160.0
+offset_right = 466.0
+offset_bottom = 189.0
+text = "Pseudolocalize"
+script = null
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="margin2" type="MarginContainer" parent="HBoxContainer/Pseudolocalizer"]
+offset_top = 193.0
+offset_bottom = 198.0
+size_flags_horizontal = 0
+size_flags_vertical = 0
+custom_constants/margin_top = 5
+script = null
+
+[node name="Label2" type="Label" parent="HBoxContainer/Pseudolocalizer"]
+offset_top = 202.0
+offset_right = 466.0
+offset_bottom = 228.0
+text = "Pseudolocalization result :"
+structured_text_bidi_override_options = [  ]
+script = null
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Result" type="TextEdit" parent="HBoxContainer/Pseudolocalizer"]
+offset_top = 232.0
+offset_right = 466.0
+offset_bottom = 350.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
 custom_colors/font_color = Color( 1, 1, 1, 1 )
 custom_colors/font_readonly_color = Color( 1, 1, 1, 1 )
 readonly = true
@@ -166,44 +259,16 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Label" type="Label" parent="Pseudolocalizer"]
-offset_left = 736.0
-offset_top = 153.0
-offset_right = 1006.0
-offset_bottom = 176.0
-text = "Pseudolocalization key :"
-structured_text_bidi_override_options = [  ]
+[node name="MarginContainer" type="MarginContainer" parent="HBoxContainer"]
+offset_left = 1012.0
+offset_right = 1012.0
+offset_bottom = 350.0
 script = null
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
-[node name="Label2" type="Label" parent="Pseudolocalizer"]
-offset_left = 739.568
-offset_top = 307.597
-offset_right = 1009.57
-offset_bottom = 333.597
-text = "Pseudolocalization result :"
-structured_text_bidi_override_options = [  ]
-script = null
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Pseudolocalize" type="Button" parent="Pseudolocalizer"]
-offset_left = 797.46
-offset_top = 265.54
-offset_right = 957.46
-offset_bottom = 294.54
-text = "Pseudolocalize"
-script = null
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[connection signal="toggled" from="Pseudolocalization_options/toggle" to="." method="_on_toggle_toggled"]
-[connection signal="toggled" from="Pseudolocalization_options/accents" to="." method="_on_accents_toggled"]
-[connection signal="toggled" from="Pseudolocalization_options/fakebidi" to="." method="_on_fakebidi_toggled"]
-[connection signal="text_changed" from="Pseudolocalization_options/prefix/TextEdit" to="." method="_on_prefix_changed"]
-[connection signal="text_changed" from="Pseudolocalization_options/suffix/TextEdit" to="." method="_on_suffix_changed"]
-[connection signal="pressed" from="Pseudolocalizer/Pseudolocalize" to="." method="_on_Pseudolocalize_pressed"]
+[connection signal="toggled" from="HBoxContainer/Pseudolocalization_options/toggle" to="." method="_on_toggle_toggled"]
+[connection signal="toggled" from="HBoxContainer/Pseudolocalization_options/accents" to="." method="_on_accents_toggled"]
+[connection signal="toggled" from="HBoxContainer/Pseudolocalization_options/doublevowels" to="." method="_on_doublevowels_toggled"]
+[connection signal="toggled" from="HBoxContainer/Pseudolocalization_options/fakebidi" to="." method="_on_fakebidi_toggled"]
+[connection signal="text_changed" from="HBoxContainer/Pseudolocalization_options/prefix/TextEdit" to="." method="_on_prefix_changed"]
+[connection signal="text_changed" from="HBoxContainer/Pseudolocalization_options/suffix/TextEdit" to="." method="_on_suffix_changed"]
+[connection signal="pressed" from="HBoxContainer/Pseudolocalizer/Pseudolocalize" to="." method="_on_Pseudolocalize_pressed"]
