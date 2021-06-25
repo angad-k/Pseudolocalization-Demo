@@ -18,7 +18,7 @@ config/icon="res://icon.png"
 
 pseudolocalization/use_pseudolocalization=true
 pseudolocalization/double_vowels=true
-pseudolocalization/expansion_ratio=100
+pseudolocalization/expansion_ratio=1.0
 
 [rendering]
 

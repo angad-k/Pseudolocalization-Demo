@@ -1,11 +1,11 @@
-HBoxContainer
 MarginContainer
+TextEdit
+Label
+HBoxContainer
 CenterContainer
 VBoxContainer
 Control
 Container
 CheckButton
-Label
 Button
-TextEdit
 Node2D

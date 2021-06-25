@@ -107,10 +107,35 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="prefix" type="Control" parent="HBoxContainer/Pseudolocalization_options"]
+[node name="exp_ratio" type="HBoxContainer" parent="HBoxContainer/Pseudolocalization_options"]
+offset_left = 6.0
 offset_top = 176.0
 offset_right = 466.0
-offset_bottom = 176.0
+offset_bottom = 202.0
+script = null
+
+[node name="Label" type="Label" parent="HBoxContainer/Pseudolocalization_options/exp_ratio"]
+offset_right = 134.0
+offset_bottom = 26.0
+size_flags_horizontal = 2
+size_flags_stretch_ratio = 4.0
+text = "Expansion Ratio : "
+valign = 1
+structured_text_bidi_override_options = [  ]
+script = null
+
+[node name="TextEdit" type="TextEdit" parent="HBoxContainer/Pseudolocalization_options/exp_ratio"]
+offset_left = 368.0
+offset_right = 460.0
+offset_bottom = 26.0
+size_flags_horizontal = 3
+structured_text_bidi_override_options = [  ]
+script = null
+
+[node name="prefix" type="Control" parent="HBoxContainer/Pseudolocalization_options"]
+offset_top = 206.0
+offset_right = 466.0
+offset_bottom = 206.0
 size_flags_horizontal = 3
 script = null
 
@@ -139,9 +164,9 @@ __meta__ = {
 }
 
 [node name="suffix" type="Control" parent="HBoxContainer/Pseudolocalization_options"]
-offset_top = 180.0
+offset_top = 210.0
 offset_right = 466.0
-offset_bottom = 180.0
+offset_bottom = 210.0
 size_flags_horizontal = 3
 script = null
 
@@ -269,6 +294,7 @@ script = null
 [connection signal="toggled" from="HBoxContainer/Pseudolocalization_options/accents" to="." method="_on_accents_toggled"]
 [connection signal="toggled" from="HBoxContainer/Pseudolocalization_options/doublevowels" to="." method="_on_doublevowels_toggled"]
 [connection signal="toggled" from="HBoxContainer/Pseudolocalization_options/fakebidi" to="." method="_on_fakebidi_toggled"]
+[connection signal="text_changed" from="HBoxContainer/Pseudolocalization_options/exp_ratio/TextEdit" to="." method="_on_expansion_ratio_text_changed"]
 [connection signal="text_changed" from="HBoxContainer/Pseudolocalization_options/prefix/TextEdit" to="." method="_on_prefix_changed"]
 [connection signal="text_changed" from="HBoxContainer/Pseudolocalization_options/suffix/TextEdit" to="." method="_on_suffix_changed"]
 [connection signal="pressed" from="HBoxContainer/Pseudolocalizer/Pseudolocalize" to="." method="_on_Pseudolocalize_pressed"]
