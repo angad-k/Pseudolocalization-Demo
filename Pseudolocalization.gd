@@ -46,6 +46,7 @@ func _on_doublevowels_toggled(button_pressed):
 
 
 func _on_expansion_ratio_text_changed():
+	float()
 	var ratio = ($HBoxContainer/Pseudolocalization_options/exp_ratio/TextEdit.text).to_float()
 	if ratio > 1:
 		ratio = 1
