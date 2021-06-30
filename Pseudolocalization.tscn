@@ -32,7 +32,7 @@ offset_left = 1.0
 offset_top = 460.918
 offset_right = 1023.0
 offset_bottom = 544.918
-custom_font_sizes/font_size = 34
+custom_font_sizes/font_size = 22
 custom_colors/font_color = Color( 0.164706, 0.85098, 1, 1 )
 text = "ABCDEFGHIJKLMNOPQRSTUVWXYZ
 abcdefghijklmnopqrstuvwxyz"
@@ -78,7 +78,7 @@ offset_top = 44.0
 offset_right = 466.0
 offset_bottom = 84.0
 size_flags_horizontal = 3
-text = "Toggle accents"
+text = "Toggle Accents"
 script = null
 __meta__ = {
 "_edit_use_anchors_": false
@@ -107,10 +107,23 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="exp_ratio" type="HBoxContainer" parent="HBoxContainer/Pseudolocalization_options"]
+[node name="override" type="CheckButton" parent="HBoxContainer/Pseudolocalization_options"]
 offset_top = 176.0
 offset_right = 466.0
-offset_bottom = 202.0
+offset_bottom = 216.0
+rect_pivot_offset = Vector2( -370, -80 )
+size_flags_horizontal = 3
+text = "Toggle Override"
+script = null
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="exp_ratio" type="HBoxContainer" parent="HBoxContainer/Pseudolocalization_options"]
+offset_top = 220.0
+offset_right = 466.0
+offset_bottom = 246.0
+size_flags_vertical = 0
 script = null
 
 [node name="MarginContainer" type="MarginContainer" parent="HBoxContainer/Pseudolocalization_options/exp_ratio"]
@@ -124,6 +137,7 @@ offset_left = 7.0
 offset_right = 141.0
 offset_bottom = 26.0
 size_flags_horizontal = 2
+size_flags_vertical = 1
 size_flags_stretch_ratio = 4.0
 text = "Expansion Ratio : "
 valign = 1
@@ -139,9 +153,9 @@ structured_text_bidi_override_options = [  ]
 script = null
 
 [node name="prefix" type="Control" parent="HBoxContainer/Pseudolocalization_options"]
-offset_top = 206.0
+offset_top = 250.0
 offset_right = 466.0
-offset_bottom = 206.0
+offset_bottom = 250.0
 size_flags_horizontal = 3
 script = null
 
@@ -170,9 +184,9 @@ __meta__ = {
 }
 
 [node name="suffix" type="Control" parent="HBoxContainer/Pseudolocalization_options"]
-offset_top = 210.0
+offset_top = 254.0
 offset_right = 466.0
-offset_bottom = 210.0
+offset_bottom = 254.0
 size_flags_horizontal = 3
 script = null
 
@@ -300,6 +314,7 @@ script = null
 [connection signal="toggled" from="HBoxContainer/Pseudolocalization_options/accents" to="." method="_on_accents_toggled"]
 [connection signal="toggled" from="HBoxContainer/Pseudolocalization_options/doublevowels" to="." method="_on_doublevowels_toggled"]
 [connection signal="toggled" from="HBoxContainer/Pseudolocalization_options/fakebidi" to="." method="_on_fakebidi_toggled"]
+[connection signal="toggled" from="HBoxContainer/Pseudolocalization_options/override" to="." method="_on_override_toggled"]
 [connection signal="text_changed" from="HBoxContainer/Pseudolocalization_options/exp_ratio/TextEdit" to="." method="_on_expansion_ratio_text_changed"]
 [connection signal="text_changed" from="HBoxContainer/Pseudolocalization_options/prefix/TextEdit" to="." method="_on_prefix_changed"]
 [connection signal="text_changed" from="HBoxContainer/Pseudolocalization_options/suffix/TextEdit" to="." method="_on_suffix_changed"]

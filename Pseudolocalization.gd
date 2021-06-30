@@ -5,6 +5,7 @@ func _ready():
 	$HBoxContainer/Pseudolocalization_options/toggle.pressed = TranslationServer.is_pseudolocalization_accents_enabled()
 	$HBoxContainer/Pseudolocalization_options/fakebidi.pressed = TranslationServer.is_pseudolocalization_fake_bidi_enabled()
 	$HBoxContainer/Pseudolocalization_options/doublevowels.pressed = TranslationServer.is_pseudolocalization_double_vowels_enabled()
+	$HBoxContainer/Pseudolocalization_options/override.pressed = TranslationServer.is_pseudolocalization_override_enabled()
 	$HBoxContainer/Pseudolocalization_options/prefix/TextEdit.text = TranslationServer.get_pseudolocalization_prefix()
 	$HBoxContainer/Pseudolocalization_options/suffix/TextEdit.text = TranslationServer.get_pseudolocalization_suffix()
 	$HBoxContainer/Pseudolocalization_options/exp_ratio/TextEdit.text = str(TranslationServer.get_pseudolocalization_expansion_ratio())
@@ -55,4 +56,9 @@ func _on_expansion_ratio_text_changed():
 		ratio = 0 
 		$HBoxContainer/Pseudolocalization_options/exp_ratio/TextEdit.text = str(ratio)
 	TranslationServer.set_pseudolocalization_expansion_ratio(ratio)
+	pass # Replace with function body.
+
+
+func _on_override_toggled(button_pressed):
+	TranslationServer.set_pseudolocalization_override_enabled(button_pressed)
 	pass # Replace with function body.

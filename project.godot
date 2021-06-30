@@ -10,7 +10,7 @@ config_version=4
 
 [application]
 
-config/name="Pseudolocalization Demo"
+config/name="Pseudolocalization"
 run/main_scene="res://Pseudolocalization.tscn"
 config/icon="res://icon.png"
 
@@ -18,7 +18,8 @@ config/icon="res://icon.png"
 
 pseudolocalization/use_pseudolocalization=true
 pseudolocalization/double_vowels=true
-pseudolocalization/expansion_ratio=1.0
+pseudolocalization/expansion_ratio=0.3
+pseudolocalization/override=true
 
 [rendering]
 
