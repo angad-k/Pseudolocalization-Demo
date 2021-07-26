@@ -4,5 +4,5 @@
 
 [resource]
 background_mode = 1
-background_color = Color( 0.839216, 0.352941, 0.635294, 1 )
+background_color = Color(0.839216, 0.352941, 0.635294, 1)
 sky = SubResource( 1 )

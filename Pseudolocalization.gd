@@ -1,49 +1,56 @@
 extends Node2D
 
 func _ready():
-	$HBoxContainer/Pseudolocalization_options/accents.pressed = TranslationServer.is_pseudolocalization_accents_enabled()
-	$HBoxContainer/Pseudolocalization_options/toggle.pressed = TranslationServer.is_pseudolocalization_accents_enabled()
-	$HBoxContainer/Pseudolocalization_options/fakebidi.pressed = TranslationServer.is_pseudolocalization_fake_bidi_enabled()
-	$HBoxContainer/Pseudolocalization_options/doublevowels.pressed = TranslationServer.is_pseudolocalization_double_vowels_enabled()
-	$HBoxContainer/Pseudolocalization_options/override.pressed = TranslationServer.is_pseudolocalization_override_enabled()
-	$HBoxContainer/Pseudolocalization_options/prefix/TextEdit.text = TranslationServer.get_pseudolocalization_prefix()
-	$HBoxContainer/Pseudolocalization_options/suffix/TextEdit.text = TranslationServer.get_pseudolocalization_suffix()
-	$HBoxContainer/Pseudolocalization_options/exp_ratio/TextEdit.text = str(TranslationServer.get_pseudolocalization_expansion_ratio())
+	$HBoxContainer/Pseudolocalization_options/accents.pressed = ProjectSettings.get("internationalization/pseudolocalization/replace_with_accents")
+	$HBoxContainer/Pseudolocalization_options/toggle.pressed = TranslationServer.is_pseudolocalization_enabled()
+	$HBoxContainer/Pseudolocalization_options/fakebidi.pressed = ProjectSettings.get("internationalization/pseudolocalization/fake_bidi")
+	$HBoxContainer/Pseudolocalization_options/doublevowels.pressed = ProjectSettings.get("internationalization/pseudolocalization/double_vowels")
+	$HBoxContainer/Pseudolocalization_options/override.pressed = ProjectSettings.get("internationalization/pseudolocalization/override")
+	$HBoxContainer/Pseudolocalization_options/skipplaceholders.pressed = ProjectSettings.get("internationalization/pseudolocalization/skip_placeholders")
+	$HBoxContainer/Pseudolocalization_options/prefix/TextEdit.text = ProjectSettings.get("internationalization/pseudolocalization/prefix")
+	$HBoxContainer/Pseudolocalization_options/suffix/TextEdit.text = ProjectSettings.get("internationalization/pseudolocalization/suffix")
+	$HBoxContainer/Pseudolocalization_options/exp_ratio/TextEdit.text = str(ProjectSettings.get("internationalization/pseudolocalization/expansion_ratio"))
 	pass 
 
 func _on_accents_toggled(button_pressed):
-	TranslationServer.set_pseudolocalization_accents_enabled(button_pressed)
-	pass # Replace with function body.
+	ProjectSettings.set("internationalization/pseudolocalization/replace_with_accents", button_pressed)
+	TranslationServer.reload_pseudolocalization()
+	pass
 
 
 func _on_toggle_toggled(button_pressed):
 	TranslationServer.set_pseudolocalization_enabled(button_pressed)
-	pass # Replace with function body.
+	#Since pseudolocalization can be enabled directly through this method, you don't need to reload.
+	pass
 
 
 func _on_fakebidi_toggled(button_pressed):
-	TranslationServer.set_pseudolocalization_fake_bidi_enabled(button_pressed)
-	pass # Replace with function body.
+	ProjectSettings.set("internationalization/pseudolocalization/fake_bidi", button_pressed)
+	TranslationServer.reload_pseudolocalization()
+	pass
 
 
 func _on_prefix_changed():
-	TranslationServer.set_pseudolocalization_prefix($HBoxContainer/Pseudolocalization_options/prefix/TextEdit.text)
-	pass # Replace with function body.
+	ProjectSettings.set("internationalization/pseudolocalization/prefix", $HBoxContainer/Pseudolocalization_options/prefix/TextEdit.text)
+	TranslationServer.reload_pseudolocalization()
+	pass
 
 
 func _on_suffix_changed():
-	TranslationServer.set_pseudolocalization_suffix($HBoxContainer/Pseudolocalization_options/suffix/TextEdit.text)
-	pass # Replace with function body.
+	ProjectSettings.set("internationalization/pseudolocalization/suffix", $HBoxContainer/Pseudolocalization_options/suffix/TextEdit.text)
+	TranslationServer.reload_pseudolocalization()
+	pass
 
 
 func _on_Pseudolocalize_pressed():
 	$HBoxContainer/Pseudolocalizer/Result.text = TranslationServer.pseudolocalize($HBoxContainer/Pseudolocalizer/Key.text)
-	pass # Replace with function body.
+	pass
 
 
 func _on_doublevowels_toggled(button_pressed):
-	TranslationServer.set_pseudolocalization_double_vowels_enabled(button_pressed)
-	pass # Replace with function body.
+	ProjectSettings.set("internationalization/pseudolocalization/double_vowels", button_pressed)
+	TranslationServer.reload_pseudolocalization()
+	pass
 
 
 func _on_expansion_ratio_text_changed():
@@ -55,10 +62,18 @@ func _on_expansion_ratio_text_changed():
 	if ratio < 0:
 		ratio = 0 
 		$HBoxContainer/Pseudolocalization_options/exp_ratio/TextEdit.text = str(ratio)
-	TranslationServer.set_pseudolocalization_expansion_ratio(ratio)
-	pass # Replace with function body.
+	ProjectSettings.set("internationalization/pseudolocalization/expansion_ratio", ratio)
+	TranslationServer.reload_pseudolocalization()
+	pass
 
 
 func _on_override_toggled(button_pressed):
-	TranslationServer.set_pseudolocalization_override_enabled(button_pressed)
-	pass # Replace with function body.
+	ProjectSettings.set("internationalization/pseudolocalization/override", button_pressed)
+	TranslationServer.reload_pseudolocalization()
+	pass
+
+
+func _on_skipplaceholders_toggled(button_pressed):
+	ProjectSettings.set("internationalization/pseudolocalization/skip_placeholders", button_pressed)
+	TranslationServer.reload_pseudolocalization()
+	pass
